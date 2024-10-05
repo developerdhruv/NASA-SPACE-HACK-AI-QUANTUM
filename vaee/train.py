@@ -7,10 +7,11 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 import joblib
-
+import logging
 class VAE(nn.Module):
     def __init__(self, input_dim, hidden_dim, latent_dim):
         super(VAE, self).__init__()
+        self.input_dim = input_dim
         
         # Encoder
         self.encoder = nn.Sequential(
@@ -78,14 +79,51 @@ def detect_anomalies(vae, data_loader, device, scaler):
     original_data = []
     reconstructed_data = []
     with torch.no_grad():
-        for data in data_loader:
-            data = data[0].to(device)
-            recon, _, _ = vae(data)
-            mse_loss = nn.MSELoss(reduction='none')(recon, data)
-            mse_loss = mse_loss.mean(axis=1)
-            anomalies.extend(mse_loss.cpu().numpy())
-            original_data.extend(data.cpu().numpy())
-            reconstructed_data.extend(recon.cpu().numpy())
+        for batch_idx, batch in enumerate(data_loader):
+            try:
+                logging.info(f"Batch {batch_idx}: Type of batch: {type(batch)}, Length: {len(batch)}")
+                
+                # Handle different types of batch data
+                if isinstance(batch, torch.Tensor):
+                    data = batch
+                elif isinstance(batch, (tuple, list)):
+                    if len(batch) == 0:
+                        logging.warning(f"Batch {batch_idx}: Empty batch, skipping")
+                        continue
+                    data = batch[0]  # Assume the first element is the data
+                else:
+                    raise TypeError(f"Unexpected batch type: {type(batch)}")
+                
+                data = data.to(device)
+                logging.info(f"Batch {batch_idx}: Input data shape: {data.shape}")
+                
+                if data.dim() == 1:
+                    data = data.unsqueeze(0)  # Add batch dimension if missing
+                elif data.dim() > 2:
+                    data = data.view(data.size(0), -1)  # Flatten if more than 2D
+                
+                logging.info(f"Batch {batch_idx}: Reshaped data shape: {data.shape}")
+                
+                if data.shape[1] != vae.input_dim:
+                    raise ValueError(f"Input dimension mismatch. Expected {vae.input_dim}, got {data.shape[1]}")
+                
+                recon, mu, logvar = vae(data)
+                logging.info(f"Batch {batch_idx}: Reconstruction shape: {recon.shape}")
+                
+                mse_loss = nn.MSELoss(reduction='none')(recon, data)
+                mse_loss = mse_loss.mean(axis=1)
+                
+                anomalies.extend(mse_loss.cpu().numpy())
+                original_data.extend(data.cpu().numpy())
+                reconstructed_data.extend(recon.cpu().numpy())
+            
+            except Exception as e:
+                logging.error(f"Error processing batch {batch_idx}: {str(e)}")
+                logging.error(f"Batch content: {batch}")
+                raise
+    
+    if not anomalies:
+        raise ValueError("No data was successfully processed")
     
     anomalies = np.array(anomalies)
     threshold = np.mean(anomalies) + 2 * np.std(anomalies)
@@ -107,6 +145,7 @@ def load_and_preprocess_data(file_path, sequence_length=50, stride=1):
     return torch.FloatTensor(sequences), scaler
 
 def main():
+    logging.basicConfig(level=logging.INFO)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Using device: {device}")
 
@@ -127,7 +166,11 @@ def main():
     train_vae(vae, optimizer, data_loader, device, epochs=300)
 
     # Detect anomalies
-    anomalies, original_data, reconstructed_data = detect_anomalies(vae, data_loader, device, scaler)
+    
+    try:
+        anomalies, original_data, reconstructed_data = detect_anomalies(vae, data_loader, device, scaler)
+    except Exception as e:
+        logging.error(f"Error in anomaly detection: {str(e)}")
 
     # Visualize results
     plt.figure(figsize=(15, 10))

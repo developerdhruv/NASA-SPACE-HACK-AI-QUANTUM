@@ -1,0 +1,35 @@
+2024-10-05 20:41:51,859 - api - INFO - Using device: cuda
+2024-10-05 20:41:51,962 - api - INFO - All models and scalers loaded successfully
+2024-10-05 20:42:32,646 - api - INFO - PINN processing completed. Shape of denoised_data: (1,)
+2024-10-05 20:42:32,652 - api - INFO - GAN processing completed. Shape of generated_samples: (10, 100)
+2024-10-05 20:42:32,652 - api - ERROR - Error in preparing augmented data: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 1 has 2 dimension(s)
+2024-10-05 20:42:32,653 - api - ERROR - Traceback (most recent call last):
+  File "E:\nasa_space_hack24\api.py", line 157, in process_seismic_data_task
+    augmented_data = np.concatenate([gan_sequences_np, generated_samples], axis=0)  # Ensure correct concatenation
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 1 has 2 dimension(s)
+
+2024-10-05 20:42:32,654 - api - ERROR - Unexpected error processing seismic data: Error in preparing augmented data: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 1 has 2 dimension(s)
+2024-10-05 20:42:32,654 - api - ERROR - Error processing seismic data: Error in preparing augmented data: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 1 has 2 dimension(s)
+2024-10-05 20:42:32,658 - api - ERROR - Traceback (most recent call last):
+  File "E:\nasa_space_hack24\api.py", line 157, in process_seismic_data_task
+    augmented_data = np.concatenate([gan_sequences_np, generated_samples], axis=0)  # Ensure correct concatenation
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 1 has 2 dimension(s)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\nasa_space_hack24\api.py", line 207, in process_seismic_data
+    results = await asyncio.to_thread(process_seismic_data_task, seismic_data)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhruv Kumar\AppData\Local\Programs\Python\Python312\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhruv Kumar\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\nasa_space_hack24\api.py", line 163, in process_seismic_data_task
+    raise ValueError(f"Error in preparing augmented data: {str(e)}")
+ValueError: Error in preparing augmented data: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 1 has 2 dimension(s)
+

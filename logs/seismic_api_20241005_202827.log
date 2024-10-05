@@ -1,0 +1,64 @@
+2024-10-05 20:28:27,403 - api - INFO - Using device: cuda
+2024-10-05 20:28:27,526 - api - INFO - All models and scalers loaded successfully
+2024-10-05 20:34:28,478 - api - INFO - PINN processing completed. Shape of denoised_data: (100,)
+2024-10-05 20:34:28,494 - api - INFO - GAN processing completed. Shape of generated_samples: (10, 100)
+2024-10-05 20:34:28,495 - api - INFO - Augmented data prepared. Shape: (11, 100)
+2024-10-05 20:34:28,495 - api - INFO - Shape of augmented_data after reshaping: (11, 100)
+2024-10-05 20:34:28,496 - api - INFO - Shape of vae_input: torch.Size([11, 100])
+2024-10-05 20:34:28,497 - api - ERROR - Error in VAE processing: 'VAE' object has no attribute 'input_dim'
+2024-10-05 20:34:28,500 - api - ERROR - Traceback (most recent call last):
+  File "E:\nasa_space_hack24\api.py", line 177, in process_seismic_data_task
+    if vae_input.shape[1] != vae_model.input_dim:
+                             ^^^^^^^^^^^^^^^^^^^
+  File "E:\nasa_space_hack24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1729, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'VAE' object has no attribute 'input_dim'
+
+2024-10-05 20:34:28,500 - api - ERROR - Unexpected error processing seismic data: Error in VAE processing: 'VAE' object has no attribute 'input_dim'
+2024-10-05 20:34:28,503 - api - ERROR - Traceback (most recent call last):
+  File "E:\nasa_space_hack24\api.py", line 177, in process_seismic_data_task
+    if vae_input.shape[1] != vae_model.input_dim:
+                             ^^^^^^^^^^^^^^^^^^^
+  File "E:\nasa_space_hack24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1729, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'VAE' object has no attribute 'input_dim'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\nasa_space_hack24\api.py", line 189, in process_seismic_data_task
+    raise ValueError(f"Error in VAE processing: {str(e)}")
+ValueError: Error in VAE processing: 'VAE' object has no attribute 'input_dim'
+
+2024-10-05 20:34:28,504 - api - ERROR - Error in process_seismic_file endpoint: Unexpected error: Error in VAE processing: 'VAE' object has no attribute 'input_dim'
+2024-10-05 20:34:39,265 - api - INFO - PINN processing completed. Shape of denoised_data: (100,)
+2024-10-05 20:34:39,268 - api - INFO - GAN processing completed. Shape of generated_samples: (10, 100)
+2024-10-05 20:34:39,268 - api - INFO - Augmented data prepared. Shape: (11, 100)
+2024-10-05 20:34:39,268 - api - INFO - Shape of augmented_data after reshaping: (11, 100)
+2024-10-05 20:34:39,270 - api - INFO - Shape of vae_input: torch.Size([11, 100])
+2024-10-05 20:34:39,270 - api - ERROR - Error in VAE processing: 'VAE' object has no attribute 'input_dim'
+2024-10-05 20:34:39,272 - api - ERROR - Traceback (most recent call last):
+  File "E:\nasa_space_hack24\api.py", line 177, in process_seismic_data_task
+    if vae_input.shape[1] != vae_model.input_dim:
+                             ^^^^^^^^^^^^^^^^^^^
+  File "E:\nasa_space_hack24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1729, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'VAE' object has no attribute 'input_dim'
+
+2024-10-05 20:34:39,273 - api - ERROR - Unexpected error processing seismic data: Error in VAE processing: 'VAE' object has no attribute 'input_dim'
+2024-10-05 20:34:39,275 - api - ERROR - Traceback (most recent call last):
+  File "E:\nasa_space_hack24\api.py", line 177, in process_seismic_data_task
+    if vae_input.shape[1] != vae_model.input_dim:
+                             ^^^^^^^^^^^^^^^^^^^
+  File "E:\nasa_space_hack24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1729, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'VAE' object has no attribute 'input_dim'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\nasa_space_hack24\api.py", line 189, in process_seismic_data_task
+    raise ValueError(f"Error in VAE processing: {str(e)}")
+ValueError: Error in VAE processing: 'VAE' object has no attribute 'input_dim'
+
+2024-10-05 20:34:39,277 - api - ERROR - Error in process_seismic_file endpoint: Unexpected error: Error in VAE processing: 'VAE' object has no attribute 'input_dim'

@@ -1,0 +1,135 @@
+2024-10-05 20:50:25,039 - api - INFO - Using device: cuda
+2024-10-05 20:50:25,144 - api - INFO - All models and scalers loaded successfully
+2024-10-05 20:50:25,217 - api - INFO - PINN processing completed. Shape of denoised_data: (100,)
+2024-10-05 20:50:25,222 - api - INFO - GAN processing completed. Shape of generated_samples: (10, 100)
+2024-10-05 20:50:25,222 - api - INFO - Augmented data prepared. Shape: (11, 100)
+2024-10-05 20:50:25,222 - api - INFO - Shape of augmented_data after reshaping: (11, 100)
+2024-10-05 20:50:25,223 - api - INFO - Shape of vae_input: torch.Size([11, 100])
+2024-10-05 20:50:25,223 - api - WARNING - Mismatch between VAE input_dim (50) and data shape (100)
+2024-10-05 20:50:25,227 - api - INFO - Adjusted vae_input shape: torch.Size([11, 50])
+2024-10-05 20:50:25,229 - root - INFO - Batch 0: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:50:25,229 - root - INFO - Batch 0: Input data shape: torch.Size([50])
+2024-10-05 20:50:25,230 - root - INFO - Batch 0: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:50:25,254 - root - INFO - Batch 0: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:50:25,268 - root - INFO - Batch 1: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:50:25,269 - root - INFO - Batch 1: Input data shape: torch.Size([50])
+2024-10-05 20:50:25,269 - root - INFO - Batch 1: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:50:25,270 - root - INFO - Batch 1: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:50:25,270 - root - INFO - Batch 2: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:50:25,271 - root - INFO - Batch 2: Input data shape: torch.Size([50])
+2024-10-05 20:50:25,271 - root - INFO - Batch 2: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:50:25,271 - root - INFO - Batch 2: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:50:25,272 - root - INFO - Batch 3: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:50:25,272 - root - INFO - Batch 3: Input data shape: torch.Size([50])
+2024-10-05 20:50:25,272 - root - INFO - Batch 3: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:50:25,273 - root - INFO - Batch 3: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:50:25,273 - root - INFO - Batch 4: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:50:25,273 - root - INFO - Batch 4: Input data shape: torch.Size([50])
+2024-10-05 20:50:25,273 - root - INFO - Batch 4: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:50:25,274 - root - INFO - Batch 4: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:50:25,274 - root - INFO - Batch 5: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:50:25,275 - root - INFO - Batch 5: Input data shape: torch.Size([50])
+2024-10-05 20:50:25,275 - root - INFO - Batch 5: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:50:25,276 - root - INFO - Batch 5: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:50:25,277 - root - INFO - Batch 6: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:50:25,277 - root - INFO - Batch 6: Input data shape: torch.Size([50])
+2024-10-05 20:50:25,277 - root - INFO - Batch 6: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:50:25,278 - root - INFO - Batch 6: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:50:25,279 - root - INFO - Batch 7: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:50:25,279 - root - INFO - Batch 7: Input data shape: torch.Size([50])
+2024-10-05 20:50:25,279 - root - INFO - Batch 7: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:50:25,280 - root - INFO - Batch 7: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:50:25,280 - root - INFO - Batch 8: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:50:25,280 - root - INFO - Batch 8: Input data shape: torch.Size([50])
+2024-10-05 20:50:25,280 - root - INFO - Batch 8: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:50:25,281 - root - INFO - Batch 8: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:50:25,281 - root - INFO - Batch 9: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:50:25,282 - root - INFO - Batch 9: Input data shape: torch.Size([50])
+2024-10-05 20:50:25,282 - root - INFO - Batch 9: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:50:25,282 - root - INFO - Batch 9: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:50:25,283 - root - INFO - Batch 10: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:50:25,283 - root - INFO - Batch 10: Input data shape: torch.Size([50])
+2024-10-05 20:50:25,283 - root - INFO - Batch 10: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:50:25,284 - root - INFO - Batch 10: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:50:25,289 - api - INFO - VAE processing completed. Shape of reconstructed_data: (11, 50)
+2024-10-05 20:50:25,290 - api - INFO - Results prepared successfully
+2024-10-05 20:50:25,291 - api - INFO - Seismic data processed successfully
+2024-10-05 20:57:09,807 - api - ERROR - Error in process_seismic_file endpoint: CSV file must contain both 'Timestamp' and 'Value' columns.
+2024-10-05 20:58:08,148 - api - INFO - PINN processing completed. Shape of denoised_data: (26,)
+2024-10-05 20:58:08,149 - api - INFO - GAN processing completed. Shape of generated_samples: (10, 100)
+2024-10-05 20:58:08,149 - api - ERROR - Error in preparing augmented data: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 1 has 2 dimension(s)
+2024-10-05 20:58:08,150 - api - ERROR - Traceback (most recent call last):
+  File "E:\nasa_space_hack24\api.py", line 155, in process_seismic_data_task
+    augmented_data = np.concatenate([gan_sequences.cpu().numpy(), generated_samples])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 1 has 2 dimension(s)
+
+2024-10-05 20:58:08,150 - api - ERROR - Unexpected error processing seismic data: Error in preparing augmented data: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 1 has 2 dimension(s)
+2024-10-05 20:58:08,151 - api - ERROR - Traceback (most recent call last):
+  File "E:\nasa_space_hack24\api.py", line 155, in process_seismic_data_task
+    augmented_data = np.concatenate([gan_sequences.cpu().numpy(), generated_samples])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 1 has 2 dimension(s)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\nasa_space_hack24\api.py", line 161, in process_seismic_data_task
+    raise ValueError(f"Error in preparing augmented data: {str(e)}")
+ValueError: Error in preparing augmented data: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 1 has 2 dimension(s)
+
+2024-10-05 20:58:08,152 - api - ERROR - Error in process_seismic_file endpoint: Unexpected error: Error in preparing augmented data: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 1 has 2 dimension(s)
+2024-10-05 20:58:24,927 - api - INFO - PINN processing completed. Shape of denoised_data: (100,)
+2024-10-05 20:58:24,936 - api - INFO - GAN processing completed. Shape of generated_samples: (10, 100)
+2024-10-05 20:58:24,937 - api - INFO - Augmented data prepared. Shape: (11, 100)
+2024-10-05 20:58:24,938 - api - INFO - Shape of augmented_data after reshaping: (11, 100)
+2024-10-05 20:58:24,939 - api - INFO - Shape of vae_input: torch.Size([11, 100])
+2024-10-05 20:58:24,939 - api - WARNING - Mismatch between VAE input_dim (50) and data shape (100)
+2024-10-05 20:58:24,939 - api - INFO - Adjusted vae_input shape: torch.Size([11, 50])
+2024-10-05 20:58:24,939 - root - INFO - Batch 0: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:58:24,940 - root - INFO - Batch 0: Input data shape: torch.Size([50])
+2024-10-05 20:58:24,940 - root - INFO - Batch 0: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:58:24,941 - root - INFO - Batch 0: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:58:24,945 - root - INFO - Batch 1: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:58:24,945 - root - INFO - Batch 1: Input data shape: torch.Size([50])
+2024-10-05 20:58:24,945 - root - INFO - Batch 1: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:58:24,947 - root - INFO - Batch 1: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:58:24,950 - root - INFO - Batch 2: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:58:24,951 - root - INFO - Batch 2: Input data shape: torch.Size([50])
+2024-10-05 20:58:24,951 - root - INFO - Batch 2: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:58:24,952 - root - INFO - Batch 2: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:58:24,955 - root - INFO - Batch 3: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:58:24,955 - root - INFO - Batch 3: Input data shape: torch.Size([50])
+2024-10-05 20:58:24,958 - root - INFO - Batch 3: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:58:24,960 - root - INFO - Batch 3: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:58:24,962 - root - INFO - Batch 4: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:58:24,964 - root - INFO - Batch 4: Input data shape: torch.Size([50])
+2024-10-05 20:58:24,965 - root - INFO - Batch 4: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:58:24,966 - root - INFO - Batch 4: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:58:24,969 - root - INFO - Batch 5: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:58:24,969 - root - INFO - Batch 5: Input data shape: torch.Size([50])
+2024-10-05 20:58:24,969 - root - INFO - Batch 5: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:58:24,971 - root - INFO - Batch 5: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:58:24,972 - root - INFO - Batch 6: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:58:24,972 - root - INFO - Batch 6: Input data shape: torch.Size([50])
+2024-10-05 20:58:24,972 - root - INFO - Batch 6: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:58:24,975 - root - INFO - Batch 6: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:58:24,976 - root - INFO - Batch 7: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:58:24,976 - root - INFO - Batch 7: Input data shape: torch.Size([50])
+2024-10-05 20:58:24,977 - root - INFO - Batch 7: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:58:24,978 - root - INFO - Batch 7: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:58:24,982 - root - INFO - Batch 8: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:58:24,983 - root - INFO - Batch 8: Input data shape: torch.Size([50])
+2024-10-05 20:58:24,984 - root - INFO - Batch 8: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:58:24,986 - root - INFO - Batch 8: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:58:24,988 - root - INFO - Batch 9: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:58:24,990 - root - INFO - Batch 9: Input data shape: torch.Size([50])
+2024-10-05 20:58:24,990 - root - INFO - Batch 9: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:58:24,992 - root - INFO - Batch 9: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:58:24,995 - root - INFO - Batch 10: Type of batch: <class 'torch.Tensor'>, Length: 50
+2024-10-05 20:58:24,995 - root - INFO - Batch 10: Input data shape: torch.Size([50])
+2024-10-05 20:58:24,995 - root - INFO - Batch 10: Reshaped data shape: torch.Size([1, 50])
+2024-10-05 20:58:24,996 - root - INFO - Batch 10: Reconstruction shape: torch.Size([1, 50])
+2024-10-05 20:58:24,998 - api - INFO - VAE processing completed. Shape of reconstructed_data: (11, 50)
+2024-10-05 20:58:24,999 - api - INFO - Results prepared successfully
+2024-10-05 20:58:24,999 - api - INFO - Seismic data processed successfully
